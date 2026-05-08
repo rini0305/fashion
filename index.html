@@ -3,998 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>FashionSAW Modern</title>
-
+<title>Fashion.com - Tren Fashion Terkini</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#081120;
-color:white;
-overflow-x:hidden;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.page{
-display:none;
+header {
+    background: rgba(22, 33, 62, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-.page.active{
-display:block;
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* LOGIN */
-
-.auth-container{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
 }
 
-.auth-box{
-width:100%;
-max-width:420px;
-background:#132238;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
+.logo span {
+    color: #ffd700;
 }
 
-.auth-title{
-font-size:32px;
-font-weight:700;
-margin-bottom:10px;
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
 }
 
-.auth-sub{
-color:#bbb;
-margin-bottom:30px;
+.nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
 }
 
-.input-group{
-margin-bottom:20px;
+.nav-links a:hover {
+    color: #ffd700;
 }
 
-.input-group label{
-display:block;
-margin-bottom:8px;
-font-size:14px;
+.hero {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+    text-align: center;
 }
 
-.input-group input{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#1c3554;
-color:white;
-font-size:15px;
-outline:none;
+.hero h1 {
+    font-size: clamp(40px, 8vw, 70px);
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:gold;
-color:black;
-font-weight:700;
-cursor:pointer;
-transition:0.3s;
-margin-top:10px;
+.hero p {
+    font-size: 18px;
+    color: #bbb;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
 }
 
-.btn:hover{
-transform:scale(1.03);
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.switch-page{
-margin-top:20px;
-text-align:center;
+.btn {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
 }
 
-.switch-page a{
-color:gold;
-cursor:pointer;
+.btn-primary {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #1a1a2e;
 }
 
-/* DASHBOARD */
-
-#page-dashboard{
-min-height:100vh;
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
-.navbar{
-background:#10233f;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:15px;
-position:sticky;
-top:0;
-z-index:1000;
+.btn-secondary {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border: 2px solid #ffd700;
 }
 
-.logo{
-font-size:30px;
-font-weight:700;
+.btn-secondary:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-3px);
 }
 
-.logo span{
-color:gold;
+.features {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-.nav-menu{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
+.feature-card {
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
 }
 
-.nav-btn{
-padding:10px 20px;
-border:none;
-border-radius:30px;
-background:#1c3554;
-color:white;
-cursor:pointer;
-font-weight:600;
+.feature-card:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-10px);
+    border-color: #ffd700;
 }
 
-.nav-btn.active{
-background:gold;
-color:black;
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-.logout-btn{
-background:red;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:10px;
-cursor:pointer;
-font-weight:600;
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffd700;
 }
 
-/* HERO */
-
-.hero{
-padding:50px 40px;
+.feature-card p {
+    color: #bbb;
+    font-size: 14px;
 }
 
-.hero h1{
-font-size:50px;
-margin-bottom:15px;
+.gallery {
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
 }
 
-.hero span{
-color:gold;
+.gallery h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #ffd700;
 }
 
-.hero p{
-max-width:700px;
-line-height:1.8;
-color:#bbb;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* FILTER */
-
-.filters{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-padding:0 40px 30px;
+.gallery-item {
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.filter-btn{
-padding:10px 20px;
-border:none;
-border-radius:30px;
-background:#1c3554;
-color:white;
-cursor:pointer;
+.gallery-item:hover {
+    transform: scale(1.05);
+    border: 2px solid #ffd700;
 }
 
-.filter-btn.active{
-background:gold;
-color:black;
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
 }
 
-/* PRODUCT */
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:0 40px 50px;
+.github-section {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
 }
 
-.product-card{
-background:#132238;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.4);
-transition:0.3s;
+.github-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffd700;
 }
 
-.product-card:hover{
-transform:translateY(-10px);
+.github-section p {
+    color: #bbb;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
 
-.product-card img{
-width:100%;
-height:230px;
-object-fit:cover;
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #1a1a2e;
+    padding: 14px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
-.product-body{
-padding:20px;
+.github-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
-.product-category{
-display:inline-block;
-padding:6px 12px;
-border-radius:20px;
-background:#1c3554;
-font-size:12px;
-margin-bottom:15px;
+footer {
+    background: rgba(22, 33, 62, 0.95);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 100px;
+    color: #bbb;
 }
 
-.product-name{
-font-size:22px;
-font-weight:700;
-margin-bottom:10px;
+footer p {
+    margin-bottom: 10px;
 }
 
-.product-brand{
-color:#bbb;
-margin-bottom:10px;
+footer a {
+    color: #ffd700;
+    text-decoration: none;
 }
 
-.product-price{
-font-size:24px;
-font-weight:700;
-color:gold;
-margin-bottom:15px;
+@media (max-width: 768px) {
+    .logo {
+        font-size: 24px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .github-section {
+        padding: 40px 20px;
+    }
 }
-
-.rating{
-margin-bottom:15px;
-color:gold;
-}
-
-/* WEIGHT */
-
-.weight-box{
-max-width:700px;
-margin:auto;
-background:#132238;
-padding:30px;
-border-radius:20px;
-}
-
-.weight-box h2{
-margin-bottom:25px;
-}
-
-.weight-input{
-margin-bottom:20px;
-}
-
-.weight-input label{
-display:block;
-margin-bottom:10px;
-}
-
-.weight-input input{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#1c3554;
-color:white;
-font-size:16px;
-}
-
-/* RESULT */
-
-.result-container{
-padding:40px;
-}
-
-.result-title{
-font-size:40px;
-margin-bottom:30px;
-}
-
-.rank-badge{
-background:gold;
-color:black;
-padding:8px 15px;
-border-radius:20px;
-font-weight:700;
-display:inline-block;
-margin-bottom:15px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.hero{
-padding:40px 20px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.filters{
-padding:0 20px 30px;
-}
-
-.product-grid{
-padding:0 20px 40px;
-}
-
-.result-container{
-padding:20px;
-}
-
-.navbar{
-padding:20px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<!-- LOGIN -->
-
-<div id="page-login" class="page active">
-
-<div class="auth-container">
-
-<div class="auth-box">
-
-<div class="auth-title">
-Fashion<span style="color:gold;">SAW</span>
-</div>
-
-<div class="auth-sub">
-Silakan login untuk masuk dashboard
-</div>
-
-<div class="input-group">
-<label>Email</label>
-<input type="email" id="login-email">
-</div>
-
-<div class="input-group">
-<label>Password</label>
-<input type="password" id="login-pass">
-</div>
-
-<button class="btn" onclick="login()">
-LOGIN
-</button>
-
-<div class="switch-page">
-Belum punya akun?
-<a onclick="showPage('page-register')">Daftar</a>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- REGISTER -->
-
-<div id="page-register" class="page">
-
-<div class="auth-container">
-
-<div class="auth-box">
-
-<div class="auth-title">
-Daftar Akun
-</div>
-
-<div class="auth-sub">
-Buat akun baru sekarang
-</div>
-
-<div class="input-group">
-<label>Nama</label>
-<input type="text" id="reg-name">
-</div>
-
-<div class="input-group">
-<label>Email</label>
-<input type="email" id="reg-email">
-</div>
-
-<div class="input-group">
-<label>Password</label>
-<input type="password" id="reg-pass">
-</div>
-
-<button class="btn" onclick="register()">
-DAFTAR
-</button>
-
-<div class="switch-page">
-Sudah punya akun?
-<a onclick="showPage('page-login')">Login</a>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- DASHBOARD -->
-
-<div id="page-dashboard" class="page">
-
-<div class="navbar">
-
-<div class="logo">
-Fashion<span>SAW</span>
-</div>
-
-<div class="nav-menu">
-
-<button class="nav-btn active" onclick="showSection('catalog-section',this)">
-Katalog
-</button>
-
-<button class="nav-btn" onclick="showSection('weight-section',this)">
-Pembobotan
-</button>
-
-<button class="nav-btn" onclick="showSection('result-section',this)">
-Hasil Rating
-</button>
-
-</div>
-
-<button class="logout-btn" onclick="logout()">
-Logout
-</button>
-
-</div>
-
-<div class="hero">
-
-<h1>
-Temukan Baju <span>Terbaik</span>
-</h1>
-
-<p>
-Sistem penilaian metode SAW untuk membantu memilih
-baju terbaik berdasarkan harga, kualitas,
-kenyamanan, dan gaya.
-</p>
-
-</div>
-
-<!-- FILTER -->
-
-<div id="catalog-section">
-
-<div class="filters">
-
-<button class="filter-btn active" onclick="filterCategory('Semua',this)">
-Semua
-</button>
-
-<button class="filter-btn" onclick="filterCategory('Kaos',this)">
-Kaos
-</button>
-
-<button class="filter-btn" onclick="filterCategory('Kemeja',this)">
-Kemeja
-</button>
-
-<button class="filter-btn" onclick="filterCategory('Hoodie',this)">
-Hoodie
-</button>
-
-<button class="filter-btn" onclick="filterCategory('Jaket',this)">
-Jaket
-</button>
-
-<button class="filter-btn" onclick="filterCategory('Sweater',this)">
-Sweater
-</button>
-
-</div>
-
-<div class="product-grid" id="product-grid"></div>
-
-</div>
-
-<!-- PEMBOBOTAN -->
-
-<div id="weight-section" style="display:none; padding:40px;">
-
-<div class="weight-box">
-
-<h2>
-⚖️ Pembobotan SAW
-</h2>
-
-<div class="weight-input">
-<label>Bobot Harga (%)</label>
-<input type="number" id="wHarga" value="20">
-</div>
-
-<div class="weight-input">
-<label>Bobot Kualitas (%)</label>
-<input type="number" id="wKualitas" value="30">
-</div>
-
-<div class="weight-input">
-<label>Bobot Kenyamanan (%)</label>
-<input type="number" id="wNyaman" value="25">
-</div>
-
-<div class="weight-input">
-<label>Bobot Gaya (%)</label>
-<input type="number" id="wGaya" value="25">
-</div>
-
-<button class="btn" onclick="calculateSAW()">
-Hitung Rating SAW
-</button>
-
-</div>
-
-</div>
-
-<!-- HASIL -->
-
-<div id="result-section" style="display:none;">
-
-<div class="result-container">
-
-<div class="result-title">
-🏆 Hasil Rating Produk
-</div>
-
-<div id="result-content"></div>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-const users=[];
-
-const products=[
-
-{
-name:'Kaos Oversize',
-brand:'Erigo',
-category:'Kaos',
-price:180000,
-kualitas:88,
-nyaman:95,
-gaya:90,
-image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000'
-},
-
-{
-name:'Kaos Polos Premium',
-brand:'Uniqlo',
-category:'Kaos',
-price:150000,
-kualitas:90,
-nyaman:92,
-gaya:85,
-image:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1000'
-},
-
-{
-name:'Kemeja Flanel',
-brand:'Nevada',
-category:'Kemeja',
-price:250000,
-kualitas:87,
-nyaman:88,
-gaya:91,
-image:'https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=1000'
-},
-
-{
-name:'Kemeja Oxford',
-brand:'Ralph & Co',
-category:'Kemeja',
-price:350000,
-kualitas:93,
-nyaman:86,
-gaya:92,
-image:'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000'
-},
-
-{
-name:'Hoodie Premium',
-brand:'StreetWear',
-category:'Hoodie',
-price:280000,
-kualitas:91,
-nyaman:96,
-gaya:94,
-image:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000'
-},
-
-{
-name:'Hoodie Zipper',
-brand:'H&M',
-category:'Hoodie',
-price:320000,
-kualitas:89,
-nyaman:90,
-gaya:93,
-image:'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1000'
-},
-
-{
-name:'Jaket Denim',
-brand:'Levis',
-category:'Jaket',
-price:450000,
-kualitas:95,
-nyaman:87,
-gaya:98,
-image:'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?q=80&w=1000'
-},
-
-{
-name:'Jaket Bomber',
-brand:'Pull&Bear',
-category:'Jaket',
-price:500000,
-kualitas:94,
-nyaman:85,
-gaya:97,
-image:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000'
-},
-
-{
-name:'Sweater Rajut',
-brand:'Zara',
-category:'Sweater',
-price:275000,
-kualitas:88,
-nyaman:93,
-gaya:89,
-image:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000'
-},
-
-{
-name:'Sweater Casual',
-brand:'Cotton On',
-category:'Sweater',
-price:240000,
-kualitas:86,
-nyaman:91,
-gaya:87,
-image:'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000'
-}
-
-];
-
-function showPage(pageId){
-
-document.querySelectorAll('.page').forEach(page=>{
-page.classList.remove('active');
-});
-
-document.getElementById(pageId).classList.add('active');
-
-}
-
-function register(){
-
-const name=document.getElementById('reg-name').value;
-const email=document.getElementById('reg-email').value;
-const pass=document.getElementById('reg-pass').value;
-
-if(name==''||email==''||pass==''){
-alert('Isi semua data');
-return;
-}
-
-users.push({
-name,email,pass
-});
-
-alert('Registrasi berhasil');
-
-showPage('page-login');
-
-}
-
-function login(){
-
-const email=document.getElementById('login-email').value;
-const pass=document.getElementById('login-pass').value;
-
-const user=users.find(u=>u.email==email && u.pass==pass);
-
-if(user){
-
-showPage('page-dashboard');
-
-renderProducts(products);
-
-}else{
-
-alert('Email atau password salah');
-
-}
-
-}
-
-function logout(){
-
-showPage('page-login');
-
-}
-
-function renderProducts(data){
-
-const grid=document.getElementById('product-grid');
-
-grid.innerHTML='';
-
-data.forEach(product=>{
-
-grid.innerHTML+=`
-
-<div class="product-card">
-
-<img src="${product.image}">
-
-<div class="product-body">
-
-<div class="product-category">
-${product.category}
-</div>
-
-<div class="product-name">
-${product.name}
-</div>
-
-<div class="product-brand">
-${product.brand}
-</div>
-
-<div class="rating">
-⭐⭐⭐⭐⭐
-</div>
-
-<div style="margin-bottom:15px;">
-
-<label style="display:flex;align-items:center;gap:10px;cursor:pointer;">
-
-<input 
-type="checkbox" 
-class="product-check"
-value="${product.name}"
->
-
-<span>Pilih Untuk Rating SAW</span>
-
-</label>
-
-</div>
-
-<div class="product-price">
-Rp ${product.price.toLocaleString('id-ID')}
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-}
-
-function filterCategory(category,btn){
-
-document.querySelectorAll('.filter-btn').forEach(button=>{
-button.classList.remove('active');
-});
-
-btn.classList.add('active');
-
-if(category=='Semua'){
-
-renderProducts(products);
-
-}else{
-
-const filtered=products.filter(
-p=>p.category==category
-);
-
-renderProducts(filtered);
-
-}
-
-}
-
-function showSection(sectionId,btn){
-
-document.getElementById('catalog-section').style.display='none';
-document.getElementById('weight-section').style.display='none';
-document.getElementById('result-section').style.display='none';
-
-document.getElementById(sectionId).style.display='block';
-
-document.querySelectorAll('.nav-btn').forEach(button=>{
-button.classList.remove('active');
-});
-
-btn.classList.add('active');
-
-}
-
-function calculateSAW(){
-
-const selected=[];
-
-document.querySelectorAll('.product-check').forEach((check,index)=>{
-
-if(check.checked){
-selected.push(products[index]);
-}
-
-});
-
-if(selected.length===0){
-alert('Pilih minimal 1 produk');
-return;
-}
-
-const wHarga=parseFloat(document.getElementById('wHarga').value)/100;
-const wKualitas=parseFloat(document.getElementById('wKualitas').value)/100;
-const wNyaman=parseFloat(document.getElementById('wNyaman').value)/100;
-const wGaya=parseFloat(document.getElementById('wGaya').value)/100;
-
-const total=
-wHarga+wKualitas+wNyaman+wGaya;
-
-if(total!==1){
-
-alert('Total bobot harus 100%');
-
-return;
-
-}
-
-const maxKualitas=Math.max(...selected.map(p=>p.kualitas));
-const maxNyaman=Math.max(...selected.map(p=>p.nyaman));
-const maxGaya=Math.max(...selected.map(p=>p.gaya));
-
-const minHarga=Math.min(...selected.map(p=>p.price));
-
-let results=[];
-
-selected.forEach(product=>{
-
-const nHarga=minHarga/product.price;
-const nKualitas=product.kualitas/maxKualitas;
-const nNyaman=product.nyaman/maxNyaman;
-const nGaya=product.gaya/maxGaya;
-
-const score=
-(nHarga*wHarga)+
-(nKualitas*wKualitas)+
-(nNyaman*wNyaman)+
-(nGaya*wGaya);
-
-results.push({
-...product,
-score:score
-});
-
-});
-
-results.sort((a,b)=>b.score-a.score);
-
-let html='';
-
-results.forEach((item,index)=>{
-
-html+=`
-
-<div class="product-card" style="margin-bottom:30px;">
-
-<img src="${item.image}">
-
-<div class="product-body">
-
-<div class="rank-badge">
-Ranking #${index+1}
-</div>
-
-<div class="product-name">
-${item.name}
-</div>
-
-<div class="product-brand">
-${item.brand}
-</div>
-
-<div class="product-price">
-Skor SAW : ${item.score.toFixed(4)}
-</div>
-
-<div style="line-height:2;color:#ddd;">
-
-<div>Harga : Rp ${item.price.toLocaleString('id-ID')}</div>
-
-<div>Kualitas : ${item.kualitas}</div>
-
-<div>Kenyamanan : ${item.nyaman}</div>
-
-<div>Gaya : ${item.gaya}</div>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-document.getElementById('result-content').innerHTML=html;
-
-document.getElementById('catalog-section').style.display='none';
-document.getElementById('weight-section').style.display='none';
-document.getElementById('result-section').style.display='block';
-
-document.querySelectorAll('.nav-btn').forEach(button=>{
-button.classList.remove('active');
-});
-
-document.querySelectorAll('.nav-btn')[2].classList.add('active');
-
-}
-
-renderProducts(products);
-
-</script>
+<header>
+    <nav>
+        <div class="logo">Fashion<span>.com</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#koleksi">Koleksi</a></li>
+            <li><a href="#github">Repository</a></li>
+            <li><a href="#about">Tentang</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <h1>Fashion Modern untuk Gaya Hidupmu</h1>
+        <p>Temukan koleksi fashion terkini dengan kualitas terbaik dan harga yang kompetitif. Ekspresikan gaya unikmu dengan produk pilihan kami.</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary">Jelajahi Koleksi</button>
+            <button class="btn btn-secondary">Pelajari Lebih Lanjut</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Desain Modern</h3>
+            <p>Koleksi terbaru dengan desain yang mengikuti tren global fashion</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>Kualitas Premium</h3>
+            <p>Bahan berkualitas tinggi yang nyaman dipakai sepanjang hari</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Harga Terjangkau</h3>
+            <p>Penawaran terbaik dengan cicilan tanpa bunga tersedia</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Pengiriman Cepat</h3>
+            <p>Gratis ongkos kirim untuk pembelian di atas nominal tertentu</p>
+        </div>
+    </section>
+
+    <section id="koleksi" class="gallery">
+        <h2>Koleksi Pilihan</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><div class="gallery-placeholder">👕</div></div>
+            <div class="gallery-item"><div class="gallery-placeholder">👔</div></div>
+            <div class="gallery-item"><div class="gallery-placeholder">👗</div></div>
+            <div class="gallery-item"><div class="gallery-placeholder">👞</div></div>
+            <div class="gallery-item"><div class="gallery-placeholder">🧥</div></div>
+            <div class="gallery-item"><div class="gallery-placeholder">👜</div></div>
+        </div>
+    </section>
+
+    <section id="github" class="github-section">
+        <h2>📱 Open Source Project</h2>
+        <p>Fashion.com adalah proyek open source yang dikembangkan dengan teknologi terkini. Lihat kode sumber kami dan berkontribusi di GitHub!</p>
+        <a href="https://github.com/rini0305/fashion" class="github-link" target="_blank">
+            <span>⭐</span>
+            Kunjungi Repository GitHub
+        </a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Fashion.com - Semua hak cipta dilindungi</p>
+    <p>Dibuat dengan ❤️ oleh <strong>rini0305</strong></p>
+    <p>Repository: <a href="https://github.com/rini0305/fashion" target="_blank">github.com/rini0305/fashion</a></p>
+</footer>
 
 </body>
 </html>
